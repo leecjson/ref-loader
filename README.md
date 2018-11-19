@@ -1,3 +1,5 @@
+A webpack loader that will create dependencies between any files manually
+
 # Usage
 
 Use `@ref(./anyfile.ext)` in any text file will build a dependency from current file to `anyfile.ext`; Then it will replace `@ref()` markup to module result of `anyfile.ext`.

@@ -1,7 +1,7 @@
 {
   "name": "ref-loader",
-  "version": "1.0.2",
-  "description": "A webpack loader that will create dependencies between any file",
+  "version": "1.0.3",
+  "description": "A webpack loader that will create dependencies between any files manually",
   "main": "index.js",
   "author": "leecjson",
   "keywords": [
