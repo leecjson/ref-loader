@@ -51,19 +51,3 @@ test('Error test B', () => {
   const src = `... @ref() ... @ref(./c.png) A`; // Should throw an Error
   expect(parse.bind(undefined, src, ref => console.log(ref))).toThrow(Error);
 });
-
-
-// test('parse2', () => {
-//   const myname = 'leecjson';
-//   const src = `<img src="@ref(./b.png)" /> <img src="@ref(./c.png)" /> <img src="@ref(happy)" />`;
-
-//   let expectOutput = '\"\"';
-//   expectOutput += ' + ' + JSON.stringify(`<img src="`);
-//   expectOutput += ' + ' + myname;
-//   expectOutput += ' + ' + JSON.stringify(`" /> <img src="`);
-//   expectOutput += ' + ' + myname;
-//   expectOutput += ' + ' + JSON.stringify(`" /> <img src="`);
-//   expectOutput += ' + ' + myname;
-//   expectOutput += ' + ' + JSON.stringify(`" />`);
-//   expect(parse(src, ref => myname)).toBe(expectOutput);
-// });
