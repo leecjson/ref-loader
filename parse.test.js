@@ -42,6 +42,20 @@ test('Specific test B', () => {
   expect(parse(src, ref => ref)).toBe(e);
 });
 
+test('Specific test C', () => {
+  const src = '';
+  // expect output
+  let e = '\"\"'; 
+  expect(parse(src, ref => ref)).toBe(e);
+});
+
+test('Specific test D', () => {
+  const src = '.html { background-color: red; }';
+  // expect output
+  let e = '\"\"' + ' + ' + JSON.stringify('.html { background-color: red; }');
+  expect(parse(src, ref => ref)).toBe(e);
+});
+
 test('Error test A', () => {
   const src = `@ref(./b.png)@ref(./c.png A`; // Should throw an Error
   expect(parse.bind(undefined, src, ref => ref)).toThrow(Error);
@@ -49,5 +63,6 @@ test('Error test A', () => {
 
 test('Error test B', () => {
   const src = `... @ref() ... @ref(./c.png) A`; // Should throw an Error
-  expect(parse.bind(undefined, src, ref => console.log(ref))).toThrow(Error);
+  expect(parse.bind(undefined, src, ref => ref)).toThrow(Error);
 });
+
